@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+/* tour */
 func sumOf(numbers: Int...) -> Int
 {
     var sum = 0;
@@ -158,4 +158,64 @@ func repeat<Item> (item: Item, times: Int) -> [Item]
     return result
 }
 
+/* the basics */
+// optional
+let possibleNumber = "123"
+let convertedNumber = possibleNumber.toInt()
+println("converted number is \(convertedNumber!)")
 
+let possibleNumber2 = "abcd"
+if let convertedNumber2 = possibleNumber2.toInt()
+{
+    println("converted number is \(convertedNumber2)")
+}
+else
+{
+    println("nil value")
+}
+
+// assert
+let age = 8
+assert(age > 1)
+
+var age_remainder = 42 % 8
+println("remainder value: \(age_remainder)")
+
+// overations
+let default_int = 5
+var user_int: Int?
+var custom_int = user_int ?? default_int
+
+println("custom_int: \(custom_int)")
+
+for num in 1...5
+{
+    println("range num: \(num)")
+}
+
+for num in 1..<5
+{
+    println("range num: \(num)")
+}
+
+// Strings
+var kor_string = "가나다라마바사"
+for char_val in kor_string.utf16
+{
+    println(char_val)
+}
+
+var count_kor = countElements(kor_string)
+println("countElements val: \(count_kor)")
+
+// functions
+var names = ["aslkjf", "flkjsdf", "dlzlkdjf", "aelkdfjlks", "bzlkjf"]
+func backwords(s1: String, s2: String) -> Bool
+{
+    return s1 > s2
+}
+var reversed = sorted(names, backwords)
+for name in reversed
+{
+    print("\(name) ")
+}
